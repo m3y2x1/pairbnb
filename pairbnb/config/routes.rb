@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
-  resources :users, controller: "users", only: :show
+  resources :users, controller: "users", only: [:show, :edit, :update, :destroy]
 
   resources :users, controller: "clearance/users", only: [:create] do
     resource :password,
