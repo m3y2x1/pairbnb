@@ -5,8 +5,8 @@ class CreateListings < ActiveRecord::Migration
       t.string :description
       t.integer :max_people
       t.integer :cost_per_night
-      t.reference :address
-      t.reference :user
+      t.references :address
+      t.references :user
 
       t.timestamps null: false
     end
