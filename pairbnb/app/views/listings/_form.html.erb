@@ -1,0 +1,77 @@
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@listing) do |form| %>
+    
+    <div id = 'name'>
+      <%= form.label :listing_name%>
+      <%= form.text_field :listing_name, class: 'form-control' %>
+    </div>
+
+      <div id = 'room_type'>
+       <%= form.label :room_type%>
+        <%= form.text_field :room_type, class: 'form-control' %>
+      </div>
+
+        <div id = 'description'>
+        <%= form.label :description%>
+       <%= form.text_area :description, class: 'form-control'%>
+       </div>
+
+        <div id = 'image'>
+        <%= form.label :image%>
+       <%= form.text_area :image, class: 'form-control'%>
+       </div>
+
+       <div id = 'no_bedroom'>
+       <%= form.label :no_bedroom%>
+       <%= form.number_field :no_bedroom, class: 'form-control' %>
+       </div>
+
+       <div id = 'no_bathroom'>
+       <%= form.label :no_bathroom%>
+       <%= form.number_field :no_bathroom, class: 'form-control' %>
+       </div>
+
+       <div id = 'no_bed'>
+       <%= form.label :no_bed%>
+       <%= form.number_field :no_bed, class: 'form-control' %>
+       </div>
+
+       <div id = 'max_people'>
+       <%= form.label :max_people%>
+       <%= form.number_field :max_people, class: 'form-control' %>
+       </div>
+
+       <div id = 'cost_per_night'>
+       <%= form.label :cost_per_night%>
+       <%= form.number_field :cost_per_night, class: 'form-control' %>
+       </div>
+
+       <div id = 'address'>
+       <%= form.label :address%>
+       <%= form.text_field :address, class: 'form-control' %>
+       </div>
+
+       <div id = 'city'>
+       <%= form.label :city%>
+       <%= form.text_field :city, class: 'form-control' %>
+       </div>
+
+       <div id = 'state'>
+       <%= form.label :state%>
+       <%= form.text_field :state, class: 'form-control' %>
+       </div>
+
+       <div id = 'country'>
+       <%= form.label :country%>
+       <%= form.text_field :country, class: 'form-control' %>
+       </div>
+
+
+      <%= form.submit %>
+    <% end %>
+
+   
+    </div>
+  </div>

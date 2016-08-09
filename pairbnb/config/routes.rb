@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   #*** end of default routes of Clearance
-  get 'welcome/index'
 
-  get 'users/show'
 
+
+resources :listings
 
 get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 

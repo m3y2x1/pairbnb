@@ -1,0 +1,40 @@
+<div class= 'container'>
+	<div class= 'row'>
+
+		<div class ="col-md-4">
+			<h2>Your Listings</h2>
+			<h2>Your Reservations</h2>
+			<h2>Reservation Requirements</h2>
+		
+			<%= button_to 'Delete', listing_path(@listing), method: :delete, class:"btn btn-primary" %>
+
+		</div>	
+	</div>
+	<div class="row">
+		<div class = "col-md-8">
+			<div class = "listing_name">
+			<h3><%= @listing.listing_name%></h3>
+			</div>
+			<br><br>
+
+			<div class ="listing_image">
+			<%= image_tag @listing.image%>
+			</div>
+
+			<div class ="listing_descript">
+
+			<%= @listing.description%>
+			</div>
+
+			<div class = "listing_add">
+			<p>Address</p>
+			<%= @listing.address %>
+			</div>
+
+			<div class = "reservation">
+			<p> Reservation dates </p>
+		</div>
+	</div>	
+
+
+</div>	
