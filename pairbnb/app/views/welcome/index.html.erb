@@ -1,3 +1,45 @@
-<h1>LIVE THERE</h1>
-<p>Book homes from local hosts in 191+ countries and experience a place like you live there.
-</p>
+ 	<header>
+ 		<%= image_tag('header') %>
+        <div class="header-content">
+            <div class="header-content-inner">
+
+                <h1 id="homeHeading">LIVE THERE</h1>
+                <hr>
+                <p>Book homes from local hosts in 191+ countries and experience a place like you live there.</p>
+                <a href="#about" class="btn btn-primary btn-xl page-scroll">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Explore the world!</h2>
+                    <hr class="light">
+                    <p class="text-faded">See where people are travelling around the world.</p>
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">See all destinations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div> <%= link_to "Connect With Facebook", "/auth/facebook" %>
+
+
+
+
+
+<% @listings.all.each do |l| %>
+	
+	<%= link_to l.listing_name, listing_path(l.id) %>
+<%end%>
+

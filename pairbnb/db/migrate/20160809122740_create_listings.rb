@@ -5,7 +5,6 @@ class CreateListings < ActiveRecord::Migration
       t.string :listing_name
       t.string :room_type
       t.string :description
-      t.string :image
       t.integer :no_bedroom
       t.integer :no_bathroom
       t.integer :no_bed  

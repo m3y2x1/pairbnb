@@ -1,3 +1,5 @@
 <% @listings.each do |l| %>
 	<%= l.listing_name %>
 <% end %>
+
+<%= button_to 'New Listing', new_listing_path, method: :get, class:"btn btn-primary" %>

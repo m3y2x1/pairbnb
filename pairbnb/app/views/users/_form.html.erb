@@ -1,7 +1,28 @@
+
+
+<div class="text-field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+<br>
+
+<div class="text-field">
+  <%= form.label :gender %>
+  <%= form.select :gender, %w{Male Female}, :prompt => 'Select', required: true  %>
+</div>
+<br>
+
+<div class="text-field">
+  <%= form.label :location %>
+  <%= form.text_field :location %>
+</div>
+<br>
+
 <div class="text-field">
   <%= form.label :email %>
   <%= form.text_field :email, type: 'email' %>
 </div>
+<br>
 
 <div class="password-field">
   <%= form.label :password %>

@@ -8,6 +8,8 @@
 		
 			<%= button_to 'Delete', listing_path(@listing), method: :delete, class:"btn btn-primary" %>
 
+			<%= button_to 'Edit', edit_listing_path(@listing), method: :get, class:"btn btn-primary" %>
+
 		</div>	
 	</div>
 	<div class="row">
@@ -18,7 +20,9 @@
 			<br><br>
 
 			<div class ="listing_image">
-			<%= image_tag @listing.image%>
+			<% @listing.images.each do |image| %>
+			<%= image_tag (image.url) %>
+			<%end%>
 			</div>
 
 			<div class ="listing_descript">
