@@ -2,3 +2,7 @@
 <h1>Update your listing</h1>
 
 <%= render 'form' %>
+
+			<%= button_to 'Delete', listing_path(@listing), method: :delete, class:"btn btn-primary" %>
+
+			<%= button_to 'Edit', edit_listing_path(@listing), method: :get, class:"btn btn-primary" %>

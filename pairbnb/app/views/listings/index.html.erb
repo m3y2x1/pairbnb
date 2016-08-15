@@ -1,5 +1,15 @@
+<div class=container>
+
+
 <% @listings.each do |l| %>
-	<%= l.listing_name %>
+	<%= image_tag(l.images[0]) %>
+	<br>
+	<p><%= l.listing_name %></p>
+	<p>City: <%= l.city %></p>
+	<p>Cost: RM<%= l.cost_per_night %>/night</p>
+	<%= link_to 'View', listing_path(l), method: :get, class:"btn btn-primary" %>
+	<hr>
+
 <% end %>
 
 <%= button_to 'New Listing', new_listing_path, method: :get, class:"btn btn-primary" %>

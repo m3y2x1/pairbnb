@@ -1,0 +1,41 @@
+<div class= 'container'>
+	<div class= 'row'>
+
+		<div class ="col-md-4">
+		<br>
+			<h1>Your Reservation</h1>
+		
+		
+		
+		<div class="row">
+		
+		<div class = "col-md-8">
+			<div class = "reservation">
+
+				<div>
+					<%= image_tag (@reservation.listing.images[0]) %>
+				</div>
+				<br>
+				<ul class="list-group">
+				<li class="list-group-item">
+					<h3><%= @reservation.listing.listing_name%></h3>
+					<br>
+			
+					<h4>Check-in date: <%= @reservation.start_date%></h4>
+					<h4>Check-out date: <%= @reservation.end_date%></h4>
+					<h4>Total price: RM<%= @reservation.total_price%> </h4>
+
+				<strong>Payment Status:</strong>
+			      <% if @reservation.payments.where(status: :authorized).count == 0%>
+			      <span class="btn btn-danger"> NOT PAID </span>
+
+			       <%= link_to 'Pay Now' , new_payment_path + "?id=" + @reservation.id.to_s, class: "btn btn-warning"  %>
+			      <% else %>
+			      <span class="btn btn-success">PAID</span>
+			      <% end %>
+			    </li>
+			  </ul>
+
+			</div>
+		</div>
+	</div>

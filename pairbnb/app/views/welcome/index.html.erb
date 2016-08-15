@@ -6,7 +6,7 @@
                 <h1 id="homeHeading">LIVE THERE</h1>
                 <hr>
                 <p>Book homes from local hosts in 191+ countries and experience a place like you live there.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Book Now</a>
+                <%= button_to 'Book Now',listings_path, method: :get, class:"btn btn-primary btn-xl page-scroll" %>
             </div>
         </div>
     </header>
@@ -32,7 +32,9 @@
                     <hr class="primary">
                 </div>
             </div>
-        </div> <%= link_to "Connect With Facebook", "/auth/facebook" %>
+        </div> 
+
+        
 
 
 

@@ -1,44 +1,93 @@
 <div class= 'container'>
-	<div class= 'row'>
-
-		<div class ="col-md-4">
-			<h2>Your Listings</h2>
-			<h2>Your Reservations</h2>
-			<h2>Reservation Requirements</h2>
-		
-			<%= button_to 'Delete', listing_path(@listing), method: :delete, class:"btn btn-primary" %>
-
-			<%= button_to 'Edit', edit_listing_path(@listing), method: :get, class:"btn btn-primary" %>
-
-		</div>	
-	</div>
 	<div class="row">
 		<div class = "col-md-8">
+		<br>
+		<br>
+		<br>
+
+			<div class ="listing_cover">
+			<%= image_tag(@listing.images[0]) %>
+
+			</div>
+
+			
+			
 			<div class = "listing_name">
 			<h3><%= @listing.listing_name%></h3>
 			</div>
-			<br><br>
 
-			<div class ="listing_image">
-			<% @listing.images.each do |image| %>
-			<%= image_tag (image.url) %>
-			<%end%>
-			</div>
+			<br>
 
 			<div class ="listing_descript">
-
 			<%= @listing.description%>
 			</div>
+			<hr>
+
+			<br>
+ 
+			<div class= "listing_space">
+				<p>The Space</p>
+				<ul>
+				<li>Accomodates: <%=@listing.max_people%></li>
+				<li>Bathrooms: <%= @listing.no_bathroom%></li>
+				<li>Bedrooms: <%= @listing.no_bedroom%></li>
+				<li>Beds: <%= @listing.no_bed%></li>
+				<li>Room Type: <%=@listing.room_type%></li>
+				</ul>
+			</div>
+			<hr>
+
+			
 
 			<div class = "listing_add">
-			<p>Address</p>
-			<%= @listing.address %>
+				<p>Address</p>
+				<%= @listing.address %>
 			</div>
+			<hr>
 
-			<div class = "reservation">
-			<p> Reservation dates </p>
+			<br>
+
+			<div class ="listing_image">
+				<% @listing.images.each do |image| %>
+				<%= image_tag (image.url) %>
+				<%end%>
+			</div>
+			<hr>
+
+			<br>
+
+
+			<div class = "reservation_form">
+			
+				<%= form_for ([@listing, @reservation]) do |f| %>
+					<%= f.label :start_date %>
+					<%= f.text_field :start_date, class: 'datepicker' %>
+
+					<%= f.label :end_date %>
+					<%= f.text_field :end_date, class: 'datepicker' %>
+
+					<%= f.hidden_field :listing_id, value:@listing.id %>
+
+					<%= f.submit %>
+
+				<%end %>
+
+
+				<script type="text/javascript">
+				  $(document).ready(function(){
+				    $('.datepicker').datepicker({
+				    	format: "dd-mm-yyyy"
+				    });
+				  });
+				</script>
+			</div>
+			<br>
+			<br>
+			<br>
+
+
 		</div>
-	</div>	
-
-
+	</div>
 </div>	
+
+

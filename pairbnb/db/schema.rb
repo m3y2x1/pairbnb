@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809194115) do
+ActiveRecord::Schema.define(version: 20160815205127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,27 @@ ActiveRecord::Schema.define(version: 20160809194115) do
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id", using: :btree
+
+  create_table "payments", force: :cascade do |t|
+    t.integer  "reservation_id"
+    t.string   "braintree_payment_id"
+    t.string   "status"
+    t.string   "fourdigit"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "payments", ["reservation_id"], name: "index_payments_on_reservation_id", using: :btree
+
+  create_table "reservations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "listing_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "total_price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
